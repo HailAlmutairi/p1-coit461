@@ -50,7 +50,7 @@ export default function VirusScannerPage() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://localhost:8000/scan', {
+      const response = await fetch('https://backend-p1-coit461.onrender.com/scan', {
         method: 'POST',
         body: formData,
       });
