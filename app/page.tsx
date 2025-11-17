@@ -84,19 +84,16 @@ export default function VirusScannerPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-2">
-            🛡️ VirusTotal File Scanner
+            Project1 COIT-461
           </h1>
           <p className="text-gray-600">
             Upload a file to scan for viruses and malware using VirusTotal
           </p>
         </div>
-
-        {/* Upload Section */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
           <div className="space-y-4">
             <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-indigo-400 transition">
@@ -146,29 +143,21 @@ export default function VirusScannerPage() {
             </button>
           </div>
         </div>
-
-        {/* Error Message */}
         {error && (
           <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-6">
             <strong>Error:</strong> {error}
           </div>
         )}
-
-        {/* Loading */}
         {loading && (
           <div className="bg-white rounded-lg shadow-lg p-8 text-center">
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-600 mx-auto mb-4"></div>
             <p className="text-gray-600">Analyzing file with VirusTotal...</p>
-            <p className="text-sm text-gray-500 mt-2">This may take up to 30 seconds</p>
+            <p className="text-sm text-gray-500 mt-2">This may take time...</p>
           </div>
         )}
-
-        {/* Results */}
         {result && !loading && (
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Scan Results</h2>
-
-            {/* Threat Level */}
             <div className={`border-2 rounded-lg p-6 mb-6 ${getThreatColor()}`}>
               <div className="flex items-center justify-between">
                 <div>
@@ -186,8 +175,6 @@ export default function VirusScannerPage() {
                 </div>
               </div>
             </div>
-
-            {/* File Info */}
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="text-sm text-gray-600">Filename</p>
@@ -204,8 +191,6 @@ export default function VirusScannerPage() {
                 <p className="font-mono text-xs text-gray-800 break-all">{result.file_hash}</p>
               </div>
             </div>
-
-            {/* Stats */}
             <div className="grid grid-cols-4 gap-4 mb-6">
               <div className="text-center p-4 bg-red-50 rounded-lg">
                 <div className="text-2xl font-bold text-red-600">{result.malicious}</div>
@@ -224,8 +209,6 @@ export default function VirusScannerPage() {
                 <div className="text-sm text-gray-600">Harmless</div>
               </div>
             </div>
-
-            {/* Detailed Results */}
             <div>
               <h3 className="text-lg font-bold text-gray-800 mb-4">
                 Detailed Scanner Results
